@@ -7,7 +7,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Incubation from './pages/Incubation';
 import Impact from './pages/Impact';
-import Team from './pages/Team';
+import Teams from './pages/Teams';
 import Contact from './pages/Contact';
 import PartnerPortal from './pages/PartnerPortal';
 import AcademicPortal from './pages/AcademicPortal';
@@ -30,7 +30,7 @@ function App() {
             <Route path="/incubation" element={<Incubation />} />
             <Route path="/incubation/apply" element={<IncubationApplication />} />
             <Route path="/impact" element={<Impact />} />
-            <Route path="/team" element={<Team />} />
+            <Route path="/team" element={<Teams />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/partner-portal" element={<PartnerPortal />} />
             <Route path="/academic-portal" element={<AcademicPortal />} />

@@ -18,38 +18,96 @@ const successImage = "https://images.unsplash.com/photo-1519389950473-47ba027778
 const Incubation: React.FC = () => {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Incubation Program"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/80 to-purple-900/80" />
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
         </div>
+
+        {/* Floating Elements */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-64 h-64 rounded-full bg-white/5"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ 
+                scale: [0, 1, 0],
+                opacity: [0, 0.1, 0],
+                x: [0, Math.random() * 400 - 200],
+                y: [0, Math.random() * 400 - 200]
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                delay: i * 2,
+                ease: "linear"
+              }}
+            />
+          ))}
+        </motion.div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4 sm:px-6 lg:px-8"
+            className="text-center"
           >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            Incubation Program
-            </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Transform your innovative ideas into successful businesses with our
-            comprehensive incubation support.
-            </p>
-            <div className="text-center">
-            <Link
-                to="/incubation/apply"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block px-4 py-2 text-sm font-semibold text-blue-100 bg-blue-500/20 rounded-full mb-6"
             >
-                Apply Now
-            </Link>
-            </div>
+              Startup Support
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100"
+            >
+              Nurturing Innovation
+              <br />
+              <span className="text-blue-300">From Idea to Impact</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
+            >
+              Empowering entrepreneurs with resources, mentorship, and support to transform innovative ideas into successful ventures.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <div className="flex items-center justify-center space-x-2 text-blue-100">
+                <span className="text-2xl">🎯</span>
+                <span>Mentorship</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2 text-blue-100">
+                <span className="text-2xl">💼</span>
+                <span>Resources</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2 text-blue-100">
+                <span className="text-2xl">🌐</span>
+                <span>Networking</span>
+              </div>
+            </motion.div>
           </motion.div>
+        </div>
       </section>
 
       {/* Program Overview */}

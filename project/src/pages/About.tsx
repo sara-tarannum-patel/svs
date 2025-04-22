@@ -22,19 +22,94 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+        </div>
+
+        {/* Floating Elements */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-64 h-64 rounded-full bg-white/5"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ 
+                scale: [0, 1, 0],
+                opacity: [0, 0.1, 0],
+                x: [0, Math.random() * 400 - 200],
+                y: [0, Math.random() * 400 - 200]
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                delay: i * 2,
+                ease: "linear"
+              }}
+            />
+          ))}
+        </motion.div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Story</h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Building bridges between academic innovation and industry implementation to create lasting social impact.
-            </p>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block px-4 py-2 text-sm font-semibold text-blue-100 bg-blue-500/20 rounded-full mb-6"
+            >
+              Our Journey
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100"
+            >
+              Building Bridges
+              <br />
+              <span className="text-blue-300">Through Innovation</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
+            >
+              We're more than just a platform. We're a catalyst for change, connecting academic brilliance with real-world impact.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-12 flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <div className="flex items-center justify-center space-x-2 text-blue-100">
+                <Users className="h-6 w-6" />
+                <span>50+ Partner Institutions</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2 text-blue-100">
+                <Lightbulb className="h-6 w-6" />
+                <span>1000+ Projects Incubated</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2 text-blue-100">
+                <Award className="h-6 w-6" />
+                <span>Global Recognition</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
