@@ -319,7 +319,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Floating Elements */}
-        <motion.div
+            <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -350,7 +350,7 @@ const Home: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8 }}
             className="text-center"
           >
             <motion.span
@@ -359,7 +359,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="inline-block px-4 py-2 text-sm font-semibold text-blue-100 bg-blue-500/20 rounded-full mb-6"
             >
-              Our Mission
+                Our Mission
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -380,8 +380,8 @@ const Home: React.FC = () => {
               We bring together entrepreneurs, researchers, and industry leaders to create transformative solutions that shape the future.
             </motion.p>
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
@@ -393,7 +393,7 @@ const Home: React.FC = () => {
                 <div className="text-3xl mb-4">🚀</div>
                 <h3 className="text-xl font-semibold text-white mb-2">Innovation</h3>
                 <p className="text-blue-100">Fostering groundbreaking ideas and technological advancements</p>
-              </motion.div>
+                  </motion.div>
               <motion.div
                 whileHover={{ y: -5 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6"
@@ -401,8 +401,8 @@ const Home: React.FC = () => {
                 <div className="text-3xl mb-4">🤝</div>
                 <h3 className="text-xl font-semibold text-white mb-2">Collaboration</h3>
                 <p className="text-blue-100">Building bridges between academia, industry, and entrepreneurs</p>
-              </motion.div>
-              <motion.div
+            </motion.div>
+            <motion.div
                 whileHover={{ y: -5 }}
                 className="bg-white/10 backdrop-blur-sm rounded-xl p-6"
               >
@@ -411,7 +411,7 @@ const Home: React.FC = () => {
                 <p className="text-blue-100">Creating solutions that make a real difference in the world</p>
               </motion.div>
             </motion.div>
-          </motion.div>
+            </motion.div>
         </div>
       </section>
 
@@ -514,8 +514,8 @@ const Home: React.FC = () => {
                 {/* Card Content */}
                 <motion.div
                   className="relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-100 overflow-hidden h-full"
-                  whileHover={{ y: -5 }}
-                >
+                whileHover={{ y: -5 }}
+              >
                   {/* Service Image Slideshow */}
                   <div className="relative h-48 mb-6 overflow-hidden rounded-xl">
                     <AnimatePresence mode="wait">
@@ -532,16 +532,16 @@ const Home: React.FC = () => {
                     </AnimatePresence>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <motion.div
+                <motion.div
                         className="text-4xl mb-2"
-                        animate={{ scale: activeService === index ? 1.1 : 1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {service.icon}
-                      </motion.div>
+                  animate={{ scale: activeService === index ? 1.1 : 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {service.icon}
+                </motion.div>
                       <h3 className="text-xl font-semibold text-white">
-                        {service.title}
-                      </h3>
+                  {service.title}
+                </h3>
                     </div>
                     {/* Navigation Dots - Prevent click propagation */}
                     <div 
@@ -576,12 +576,12 @@ const Home: React.FC = () => {
                   </motion.p>
 
                   {/* Progress Indicator */}
-                  <motion.div
+                <motion.div
                     className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={{ width: activeService === index ? '100%' : '0%' }}
-                    transition={{ duration: 0.3 }}
-                  />
+                  initial={{ width: 0 }}
+                  animate={{ width: activeService === index ? '100%' : '0%' }}
+                  transition={{ duration: 0.3 }}
+                />
 
                   {/* Hover Effect */}
                   <motion.div
@@ -640,7 +640,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* Animated Background Elements */}
-        <motion.div
+              <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -749,11 +749,11 @@ const Home: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg transform group-hover:scale-105 transition-all duration-300" />
                 <motion.div
                   className="relative bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-100 overflow-hidden flex flex-col md:flex-row h-[280px]"
-                  whileHover={{ y: -5 }}
-                >
+                whileHover={{ y: -5 }}
+              >
                   {/* Image Side */}
                   <div className="w-full md:w-2/5 h-32 md:h-full relative overflow-hidden">
-                    <motion.div
+                <motion.div
                       className="absolute inset-0"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
@@ -770,7 +770,7 @@ const Home: React.FC = () => {
                   {/* Content Side */}
                   <div className="w-full md:w-3/5 p-4 flex flex-col">
                     {/* Icon Container */}
-                    <motion.div
+                  <motion.div
                       className="w-12 h-12 rounded-lg bg-gradient-to-br from-white to-gray-50 shadow-lg flex items-center justify-center mb-2 relative overflow-hidden"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.5 }}
@@ -788,7 +788,7 @@ const Home: React.FC = () => {
                         }}
                       />
                       <span className="text-xl relative z-10">{category.icon}</span>
-                    </motion.div>
+                  </motion.div>
 
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
                     <div className="flex flex-wrap gap-1.5">
